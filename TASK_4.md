@@ -119,6 +119,8 @@ GET https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news
 
 URL `/news/{newsId}`
 
+![news_item](https://raw.githubusercontent.com/wearepush/learn-redux/master/task4/news_item.png)
+
 На странице необходимо вывести название и описание новости.
 
 Адрес и метод для запроса:
@@ -131,6 +133,8 @@ GET https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news/{newsId}
 ```
 
 Вывести кнопку для редактирования новости, если пользователь на нее нажмет, тогда текст названия и описания новости превращается в форму из двух полей и кнопки сохранить, с валидацией для названия (обязательное поле, максимум 250 симоволов) и для описания (обязательное поле, максимум 2000 симоволов).
+
+![news_item_editable](https://raw.githubusercontent.com/wearepush/learn-redux/master/task4/news_item_editable.png)
 
 Необходимо также обрабатывать любые ошибки которые может вернуть сервер при неуспешной отправки данных. Например если пользователь отправил данные, а сервер их по какой-то причине их не смог сохранить.
 
