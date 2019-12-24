@@ -169,6 +169,8 @@ DELETE https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news/{newsId}
 
 URL `/news/create`
 
+![news](https://raw.githubusercontent.com/wearepush/learn-redux/master/task4/news_create.png)
+
 На создания новости состоит из формы с двумя полями: title (input) и description (textarea). В форме должна быть валидация на поля: title (обязательное поле, максимальное количество символов 250), description (обязательное поле, максимальное количество символов 2000).
 
 По нажатию на кнопку создать, нужно отправлять запрос на сервер.
