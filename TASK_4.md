@@ -1,6 +1,6 @@
 ## Тестовое задание #4
 
-Проверяем начальные навыки: авторизации, аунтификации, redux-form.
+Проверяем начальные навыки: авторизации, аунтификации, redux-form, cookies
 
 #### Задача
 
@@ -66,3 +66,26 @@ POST https://wearepush-learn-redux-task4.herokuapp.com/api/v1/auth/login
 ```
 
 Необходимо также обрабатывать любые ошибки которые может вернуть сервер при неуспешной отправки данных. Например если авторизация была неудачной. Ее необходимо вывести внутри формы, как правило ее выводят перед кнопкой регистрации. После упешного логина пользователя нужно перебросить на страницу списка новостей текущего пользователя `/news/{userId}`.
+
+В ответе успешной авторизации возвращается токен и
+ информация пользователя
+
+```
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc0FjdGl2ZSI6dHJ1ZSwiX2lkIjoiNWRmN2M4YTcxNThhMzYwMDE3ZDY5MjgxIiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwiZmlyc3ROYW1lIjoiSXVyaWkiLCJsYXN0TmFtZSI6IkJ1bmRpa292IiwiY3JlYXRlZEF0IjoiMjAxOS0xMi0xNlQxODoxMDo0Ny43NzZaIiwiaWF0IjoxNTc3MjAzODk3LCJleHAiOjE1NzcyMDUzMzd9.GpW2uNosuelmMhobf-U9pWd4jaMXN0_4W51bUKTksRQ",
+    "user": {
+        "isActive": true,
+        "_id": "5df7c8a7158a360017d69281",
+        "email": "test@test.com",
+        "firstName": "Iurii",
+        "lastName": "Bundikov",
+        "createdAt": "2019-12-16T18:10:47.776Z"
+    }
+}
+```
+
+Перейдите по ссылки https://jwt.io/ и вставьте в поле декода token. Посмотрите на результат.
+
+Сохраните токен в cookies с ключем *token*. Установить expire date из дэкодированого token exp значения ключа.
+
+Сохраните ответ user в редьюсер. Сделайте проверку авторизированого пользователя по наличию cookies token.
