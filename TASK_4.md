@@ -23,6 +23,8 @@ https://wearepush-learn-redux-task4.herokuapp.com/
 
 ### Форма регистрации
 
+URL `/registration`
+
 Форма регистрации содержит в себе следующие поля: email, password, confirm_password, fname, lname.
 По нажатию на «зарегестрироваться» (или после нажатия клавиши Enter) уходит POST запрос с введенными данными на бэкэнд.
 
@@ -47,6 +49,8 @@ POST https://wearepush-learn-redux-task4.herokuapp.com/api/v1/auth/register
 
 
 ### Форма логина
+
+URL `/login`
 
 Форма логина содержит в себе следующие поля: email, password.
 По нажатию на «зарегестрироваться» (или после нажатия клавиши Enter) уходит POST запрос с введенными данными на бэкэнд.
@@ -92,6 +96,8 @@ POST https://wearepush-learn-redux-task4.herokuapp.com/api/v1/auth/login
 
 ### Страница со списком новостей пользователя
 
+URL `/news`
+
 Для того чтобы получать доступ к ресурсам которые создает пользователь необходимо в хэдэре запроса передавать значание Authorization: Bearer {token}, где {token} это ключ который храниться в cookies.
 
 На странице необходимо вывести список новостей пользователя. Название новости должно быть ссылкой на страницу новости `/news/{newsId}`. Если пользователь кликнит на нее, откроется новая страница с выбранной новостью, где пользователь сможет ее отредактировать.
@@ -106,6 +112,8 @@ GET https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news
 ```
 
 ### Страница новости пользователя
+
+URL `/news/{newsId}`
 
 На странице необходимо вывести название и описание новости.
 
@@ -128,7 +136,7 @@ GET https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news/{newsId}
 HEADERS
 Authorization: Bearer {token}
 
-POST https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news/{newsId}
+PUT https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news/{newsId}
 
 {
   title: "My test title",
@@ -136,7 +144,7 @@ POST https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news/{newsId}
 }
 ```
 
-Пользователь имеет возможность удалить свою новость. Необходимо вывести кнопку для удаления. По нажанию на кнопку необходимо показывать стандартное диалоговое окно "Вы уверены что хотите удалить новость {название новости}?" с кнопками Да/Нет.
+Пользователь имеет возможность удалить свою новость. Необходимо вывести кнопку для удаления. По нажанию на кнопку необходимо показывать стандартное диалоговое окно "Вы уверены что хотите удалить новость {название новости}?" с кнопками Да/Нет. После успешного удаления пользователя надо перекинуть на страницу со списком новостей.
 
 Для удаления новости адрес и метод для запроса:
 ```
@@ -144,4 +152,28 @@ HEADERS
 Authorization: Bearer {token}
 
 DELETE https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news/{newsId}
+```
+
+
+### Страница создания новости
+
+URL `/news/create`
+
+На создания новости состоит из формы с двумя полями: title (input) и description (textarea). В форме должна быть валидация на поля: title (обязательное поле, максимальное количество символов 250), description (обязательное поле, максимальное количество символов 2000).
+
+По нажатию на кнопку создать, нужно отправлять запрос на сервер.
+
+Необходимо также обрабатывать любые ошибки которые может вернуть сервер при неуспешной отправки данных. Например если пользователь отправил данные, а сервер их по какой-то причине их не смог сохранить.
+Адрес и метод для запроса:
+
+```
+HEADERS
+Authorization: Bearer {token}
+
+POST https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news
+
+{
+  title: "My test title",
+  description: "My test description"
+}
 ```
