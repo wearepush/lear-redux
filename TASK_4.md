@@ -102,6 +102,8 @@ POST https://wearepush-learn-redux-task4.herokuapp.com/api/v1/auth/login
 
 URL `/news`
 
+![news](https://raw.githubusercontent.com/wearepush/learn-redux/master/task4/news.png)
+
 Для того чтобы получать доступ к ресурсам которые создает пользователь необходимо в хэдэре запроса передавать значание Authorization: Bearer {token}, где {token} это ключ который храниться в cookies.
 
 На странице необходимо вывести список новостей пользователя. Название новости должно быть ссылкой на страницу новости `/news/{newsId}`. Если пользователь кликнит на нее, откроется новая страница с выбранной новостью, где пользователь сможет ее отредактировать.
