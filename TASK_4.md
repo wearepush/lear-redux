@@ -25,6 +25,8 @@ https://wearepush-learn-redux-task4.herokuapp.com/
 
 URL `/registration`
 
+![registration](https://raw.githubusercontent.com/wearepush/learn-redux/master/task4/registration.png)
+
 Форма регистрации содержит в себе следующие поля: email, password, confirm_password, fname, lname.
 По нажатию на «зарегестрироваться» (или после нажатия клавиши Enter) уходит POST запрос с введенными данными на бэкэнд.
 
@@ -51,6 +53,8 @@ POST https://wearepush-learn-redux-task4.herokuapp.com/api/v1/auth/register
 ### Форма логина
 
 URL `/login`
+
+![login](https://raw.githubusercontent.com/wearepush/learn-redux/master/task4/login.png)
 
 Форма логина содержит в себе следующие поля: email, password.
 По нажатию на «зарегестрироваться» (или после нажатия клавиши Enter) уходит POST запрос с введенными данными на бэкэнд.
