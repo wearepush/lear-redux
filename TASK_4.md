@@ -135,3 +135,13 @@ POST https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news/{newsId}
   description: "My test description"
 }
 ```
+
+Пользователь имеет возможность удалить свою новость. Необходимо вывести кнопку для удаления. По нажанию на кнопку необходимо показывать стандартное диалоговое окно "Вы уверены что хотите удалить новость {название новости}?" с кнопками Да/Нет.
+
+Для удаления новости адрес и метод для запроса:
+```
+HEADERS
+Authorization: Bearer {token}
+
+DELETE https://wearepush-learn-redux-task4.herokuapp.com/api/v1/news/{newsId}
+```
